@@ -1,0 +1,19 @@
+/* Reset y tipografía retro */
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: #0d0d0d;
+  color: #e8f0ff;
+  font-family: "Press Start 2P", monospace; /* fuente pixel retro */
+  font-size: 12px;
+  line-height: 1.4;
+}
+img { display: block; max-width: 100%; image-rendering: pixelated; }
+button { cursor: pointer; font-family: inherit; }
+:root {
+  --pc-border: #4ea4ff;
+  --pc-accent: #3a6fb5;
+  --pc-text: #cfe7ff;
+  --pc-subtext: #9fd1ff;
+  --pc-bg-dark: #1a1a1a;
+}

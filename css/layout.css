@@ -1,0 +1,30 @@
+/* Cabecera estilo caja retro */
+.pc-header {
+  display: flex; align-items: center; justify-content: center;
+  padding: 8px; background: #222;
+  border-bottom: 4px solid var(--pc-border);
+}
+.pc-title {
+  margin: 0; color: var(--pc-text);
+  text-shadow: 2px 2px #000;
+}
+
+/* Disposición principal: dex + sidebar */
+.pc-main {
+  max-width: 1200px; margin: 16px auto; padding: 0 8px;
+  display: grid; grid-template-columns: 1fr 280px; gap: 16px;
+}
+@media (max-width: 900px) {
+  .pc-main { grid-template-columns: 1fr; }
+  .sidebar { order: 2; }
+}
+
+.controls-column { display: flex; flex-direction: column; gap: 12px; }
+.sidebar { display: flex; flex-direction: column; gap: 16px; }
+
+/* Footer retro */
+.pc-footer {
+  text-align: center; padding: 8px;
+  background: #222; border-top: 4px solid var(--pc-border);
+}
+.hint { color: var(--pc-subtext); font-size: 10px; }

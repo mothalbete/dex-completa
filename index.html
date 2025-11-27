@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pokédex PC Box</title>
+  <link rel="stylesheet" href="./css/base.css"/>
+  <link rel="stylesheet" href="./css/layout.css"/>
+  <link rel="stylesheet" href="./css/components.css"/>
+</head>
+<body>
+  <header class="pc-header">
+    <h1 class="pc-title">Pokédex</h1>
+  </header>
+
+  <main class="pc-main">
+    <section class="controls-column">
+      <div class="pc-search">
+        <input type="text" id="searchInput" placeholder="Buscar Pokémon..."/>
+        <button id="searchBtn" class="search-btn">🔍</button>
+      </div>
+
+      <form id="filtersForm" class="filters">
+        <div class="filter-group">
+          <label for="typeSelect1">Tipo 1</label>
+          <select id="typeSelect1">
+            <option value="">(cualquiera)</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="typeSelect2">Tipo 2</label>
+          <select id="typeSelect2">
+            <option value="">(cualquiera)</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label for="abilityInput">Habilidad</label>
+          <input id="abilityInput" type="text" placeholder="ej. levitate"/>
+        </div>
+
+        <div class="filter-group">
+          <label for="moveInput">Movimiento</label>
+          <input id="moveInput" type="text" placeholder="ej. thunderbolt"/>
+        </div>
+
+        <div class="filter-group">
+          <label for="evSelect">EVs al derrotarlo</label>
+          <select id="evSelect">
+            <option value="">(ninguno)</option>
+            <option value="hp">PS</option>
+            <option value="attack">Ataque</option>
+            <option value="defense">Defensa</option>
+            <option value="special-attack">At. Esp.</option>
+            <option value="special-defense">Def. Esp.</option>
+            <option value="speed">Velocidad</option>
+          </select>
+        </div>
+
+        <div class="filter-actions">
+          <button type="submit" class="apply-btn">Aplicar filtros</button>
+          <button type="button" id="clearFilters" class="clear-btn">Limpiar</button>
+        </div>
+      </form>
+
+      <section class="pc-box">
+        <div id="grid" class="pokemon-grid" aria-live="polite"></div>
+      </section>
+
+      <section class="pc-controls">
+        <button id="prevBtn" class="arrow-btn" aria-label="Anterior">⬅️</button>
+        <span id="pageInfo" class="page-info">Página 1</span>
+        <button id="nextBtn" class="arrow-btn" aria-label="Siguiente">➡️</button>
+      </section>
+    </section>
+
+    <aside class="sidebar">
+      <section class="team-box">
+        <h2>Equipo (6)</h2>
+        <div id="teamGrid" class="team-grid"></div>
+        <button id="clearTeam">Vaciar equipo</button>
+      </section>
+      <section class="favorites-box">
+        <h2>Favoritos (≤30)</h2>
+        <div id="favoritesGrid" class="favorites-grid"></div>
+        <button id="clearFavs">Vaciar favoritos</button>
+      </section>
+    </aside>
+
+    <div id="modal" class="modal" aria-hidden="true">
+      <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="pokemonName">
+        <button class="close-btn" id="closeModal" aria-label="Cerrar">✖</button>
+        <img id="pokemonSprite" alt="Imagen del Pokémon"/>
+        <h2 id="pokemonName"></h2>
+        <div id="typeList"></div>
+        <div id="abilityList"></div>
+        <div id="evYield"></div>
+        <div id="statsContent"></div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="pc-footer">
+    <span class="hint">Usa las flechas para cambiar de página</span>
+  </footer>
+
+  <script type="module" src="./js/app.js"></script>
+</body>
+</html>

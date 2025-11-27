@@ -1,0 +1,14 @@
+/* Pequeños efectos y estados */
+.pokemon-card:hover .pokemon-name { color: #ffffff; }
+.arrow-btn:hover, .search-btn:hover, .apply-btn:hover, .clear-btn:hover, .mini-btn:hover {
+  filter: brightness(1.1);
+}
+.skeleton { animation: pulse 1.2s ease-in-out infinite; }
+@keyframes pulse { 0% { opacity: 0.5; } 50% { opacity: 1; } 100% { opacity: 0.5; } }
+.error { padding: 12px; background: #3a1620; border: 2px solid #aa3344; border-radius: 10px; color: #ffb7c1; }
+
+/* Tipos con colores suaves (opcional) */
+.type-pill[data-type="fire"] { border-color: #ff8a4a; }
+.type-pill[data-type="water"] { border-color: #4aa8ff; }
+.type-pill[data-type="grass"] { border-color: #62c462; }
+/* ... añade más si quieres matices por tipo */
